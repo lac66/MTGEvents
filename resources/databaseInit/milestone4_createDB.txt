@@ -1,0 +1,132 @@
+use MTGEvents;
+
+db.dropDatabase();
+
+use MTGEvents;
+
+db.connections.insertMany([
+    {_id: ObjectId("6089facf5e0cc1fa11f66561"), name: "Kaldheim Qualifier Weekend", host: "Wizards of the Coast", hostId: "6089c04f5e0cc1fa11f66560", topic: "Pro", details: "Finishing the January 2021 Ranked Season as a top 1200 Mythic-ranked player,Finishing with six match wins during the previous month's Qualifier Weekend,Qualifing for the Zendikar Rising Championship,Being a member of the Magic: The Gather Pro Tour Hall of Fame", date: new Date(2021, 02, 27, 06, 00), location: "MTG Arena"},
+    {_id: ObjectId("6089facf5e0cc1fa11f66562"), name: "League Weekend", host: "Wizards of the Coast", hostId: "6089c04f5e0cc1fa11f66560", topic: "Pro", details: "Each weekend will use two formats one each day,Each day is six (6) Swiss rounds,Pools will be reseeded every three rounds based on updated league standings,Each match win is worth one (1) point toward league standing", date: new Date(2021, 02, 27, 06, 00), location: "MTG Arena"},
+    {_id: ObjectId("6089facf5e0cc1fa11f66563"), name: "2020 Magic Champions Showcase Season 2", host: "Wizards of the Coast", hostId: "6089c04f5e0cc1fa11f66560", topic: "Pro", details: "30 Event Tickets,300 Play Points", date: new Date(2021, 03, 13, 08, 00), location: "Magic Online"},
+    {_id: ObjectId("6089facf5e0cc1fa11f66564"), name: "2020 Magic Champions Showcase Season 3", host: "Wizards of the Coast", hostId: "6089c04f5e0cc1fa11f66560", topic: "Pro", details: "30 Event Tickets,300 Play Points", date: new Date(2021, 03, 14, 08, 00), location: "Magic Online"},
+    {_id: ObjectId("6089facf5e0cc1fa11f66565"), name: "Kaldheim Championship", host: "Wizards of the Coast", hostId: "6089c04f5e0cc1fa11f66560", topic: "Pro", details: "Top 16 from either day of the Qualifier Tournament", date: new Date(2021, 03, 26, 06, 00), location: "MTG Arena"},
+    {_id: ObjectId("6089facf5e0cc1fa11f66566"), name: "Sealed | Kaldheim", host: "Wizards of the Coast", hostId: "6089c04f5e0cc1fa11f66560", topic: "Casual", details: "Unlike constructed games—where you arrive with your strategically created deck—in a sealed deck tournament, you build a new deck from six unopened booster packs at the start of the event.", date: new Date(2021, 01, 28, 20, 00), location: "MTG Arena"},
+    {_id: ObjectId("6089facf5e0cc1fa11f66567"), name: "Quick Draft | Zendikar Rising", host: "Wizards of the Coast", hostId: "6089c04f5e0cc1fa11f66560", topic: "Casual", details: "Players draft three Packs which contain 15 cards (10 commons, 3 uncommons, and 1 rare or mythic rare, 1 basic or common land). This means after picking one card the pack is passed on to the next player (during the closed beta other players are replaced with an AI). This continues until all cards have been picked. Players then build 40-card-minimum decks. The amount of basic lands is unlimited, they are provided to the player for free.", date: new Date(2021, 01, 29, 20, 00), location: "MTG Arena"},
+    {_id: ObjectId("6089facf5e0cc1fa11f66568"), name: "FNM at Home | Treasure Singleton", host: "Wizards of the Coast", hostId: "6089c04f5e0cc1fa11f66560", topic: "Casual", details: "Friday Night Magic (or FNM) is a format of Magic: The Gathering tournaments, held on Friday nights in gaming stores and associations all across the world. They are designed to be a beginner-friendly introduction to organized play. FNM has currently been moved to online for the duration of the pandemic.", date: new Date(2021, 02, 05, 18, 00), location: "MTG Arena"},
+    {_id: ObjectId("6089facf5e0cc1fa11f66569"), name: "Standard Metagame Challenge", host: "Wizards of the Coast", hostId: "6089c04f5e0cc1fa11f66560", topic: "Casual", details: "Standard Metagame Challenge is a special event that gives players the opportunity to win huge rewards in a relatively new metagame where the new cards from the latest set are being tested, and decklists are being refined.", date: new Date(2021, 02, 06, 18, 00), location: "MTG Arena"},
+    {_id: ObjectId("6089facf5e0cc1fa11f6656a"), name: "FNM at Home | Standard", host: "Wizards of the Coast", hostId: "6089c04f5e0cc1fa11f66560", topic: "Casual", details: "Friday Night Magic (or FNM) is a format of Magic: The Gathering tournaments, held on Friday nights in gaming stores and associations all across the world. They are designed to be a beginner-friendly introduction to organized play. FNM has currently been moved to online for the duration of the pandemic.", date: new Date(2021, 02, 11, 18, 00), location: "MTG Arena"},
+    {_id: ObjectId("6089facf5e0cc1fa11f6656b"), name: "Kaldheim | Constructed", host: "Wizards of the Coast", hostId: "6089c04f5e0cc1fa11f66560", topic: "Casual", details: "In Constructed format tournaments, players build their deck in advance of the tournament. Constructed decks must contain a minimum of 60 cards.", date: new Date(2021, 02, 13, 18, 00), location: "MTG Arena"}
+]);
+
+db.users.insertMany([
+    {
+        _id: ObjectId("60887d915e0cc1fa11f6654d"),
+        fName: "Norm", 
+        lName: "Niner", 
+        email: "norm@niner.edu", 
+        address: {
+            line1: "9201 University City Blvd", 
+            line2: "", 
+            city: "Charlotte", 
+            state: "NC", 
+            zip: 28223, 
+            country: "US"
+        }
+    }, {
+        _id : ObjectId("6089c04f5e0cc1fa11f66560"),
+        fName: "Wizards",
+        lName: "of the Coast",
+        email: "wizardsotcoast@magic.com",
+        address: {
+            line1: "1600 Lind Avenue",
+            line2: "South West Suite 400",
+            city: "Renton",
+            state: "WA",
+            zip: 98057,
+            country: "US"
+        }
+    }
+]);
+
+db.userprofiles.insertMany([
+    {
+        userId: "60887d915e0cc1fa11f6654d", 
+        userConnections: [
+            {
+                connection: {
+                    _id: ObjectId("6089facf5e0cc1fa11f6656a"),
+                    name: "FNM at Home | Standard", 
+                    host: "Wizards of the Coast",
+                    hostId: "6089c04f5e0cc1fa11f66560", 
+                    topic: "Casual", 
+                    details: "Friday Night Magic (or FNM) is a format of Magic: The Gathering tournaments, held on Friday nights in gaming stores and associations all across the world. They are designed to be a beginner-friendly introduction to organized play. FNM has currently been moved to online for the duration of the pandemic.", 
+                    date: new Date(2021, 02, 11, 18, 00), 
+                    location: "MTG Arena"
+                    },
+                rsvp: "Yes"
+            },{
+                connection: {
+                    _id: ObjectId("6089facf5e0cc1fa11f66566"),
+                    name: "Sealed | Kaldheim", 
+                    host: "Wizards of the Coast", 
+                    hostId: "6089c04f5e0cc1fa11f66560", 
+                    topic: "Casual", 
+                    details: "Unlike constructed games—where you arrive with your strategically created deck—in a sealed deck tournament, you build a new deck from six unopened booster packs at the start of the event.", 
+                    date: new Date(2021, 01, 28, 20, 00), 
+                    location: "MTG Arena"
+                    },
+                rsvp: "Maybe"
+            },{
+                connection: {
+                    _id: ObjectId("6089facf5e0cc1fa11f66565"),
+                    name: "Kaldheim Championship", 
+                    host: "Wizards of the Coast", 
+                    hostId: "6089c04f5e0cc1fa11f66560", 
+                    topic: "Pro", 
+                    details: "Top 16 from either day of the Qualifier Tournament", 
+                    date: new Date(2021, 03, 26, 06, 00), 
+                    location: "MTG Arena"
+                    },
+                rsvp: "Yes"
+            }
+        ]
+    }, {
+        userId: "6089c04f5e0cc1fa11f66560", 
+        userConnections: [
+            {
+                connection: {_id: ObjectId("6089facf5e0cc1fa11f66561"), name: "Kaldheim Qualifier Weekend", host: "Wizards of the Coast", hostId: "6089c04f5e0cc1fa11f66560", topic: "Pro", details: "Finishing the January 2021 Ranked Season as a top 1200 Mythic-ranked player,Finishing with six match wins during the previous month's Qualifier Weekend,Qualifing for the Zendikar Rising Championship,Being a member of the Magic: The Gather Pro Tour Hall of Fame", date: new Date(2021, 02, 27, 06, 00), location: "MTG Arena"},
+                rsvp: "Yes"
+            },{
+                connection: {_id: ObjectId("6089facf5e0cc1fa11f66562"), name: "League Weekend", host: "Wizards of the Coast", hostId: "6089c04f5e0cc1fa11f66560", topic: "Pro", details: "Each weekend will use two formats one each day,Each day is six (6) Swiss rounds,Pools will be reseeded every three rounds based on updated league standings,Each match win is worth one (1) point toward league standing", date: new Date(2021, 02, 27, 06, 00), location: "MTG Arena"},
+                rsvp: "Yes"
+            },{
+                connection: {_id: ObjectId("6089facf5e0cc1fa11f66563"), name: "2020 Magic Champions Showcase Season 2", host: "Wizards of the Coast", hostId: "6089c04f5e0cc1fa11f66560", topic: "Pro", details: "30 Event Tickets,300 Play Points", date: new Date(2021, 03, 13, 08, 00), location: "Magic Online"},
+                rsvp: "Yes"
+            },{
+                connection: {_id: ObjectId("6089facf5e0cc1fa11f66564"), name: "2020 Magic Champions Showcase Season 3", host: "Wizards of the Coast", hostId: "6089c04f5e0cc1fa11f66560", topic: "Pro", details: "30 Event Tickets,300 Play Points", date: new Date(2021, 03, 14, 08, 00), location: "Magic Online"},
+                rsvp: "Yes"
+            },{
+                connection: {_id: ObjectId("6089facf5e0cc1fa11f66565"), name: "Kaldheim Championship", host: "Wizards of the Coast", hostId: "6089c04f5e0cc1fa11f66560", topic: "Pro", details: "Top 16 from either day of the Qualifier Tournament", date: new Date(2021, 03, 26, 06, 00), location: "MTG Arena"},
+                rsvp: "Yes"
+            },{
+                connection: {_id: ObjectId("6089facf5e0cc1fa11f66566"), name: "Sealed | Kaldheim", host: "Wizards of the Coast", hostId: "6089c04f5e0cc1fa11f66560", topic: "Casual", details: "Unlike constructed games—where you arrive with your strategically created deck—in a sealed deck tournament, you build a new deck from six unopened booster packs at the start of the event.", date: new Date(2021, 01, 28, 20, 00), location: "MTG Arena"},
+                rsvp: "Yes"
+            },{
+                connection: {_id: ObjectId("6089facf5e0cc1fa11f66567"), name: "Quick Draft | Zendikar Rising", host: "Wizards of the Coast", hostId: "6089c04f5e0cc1fa11f66560", topic: "Casual", details: "Players draft three Packs which contain 15 cards (10 commons, 3 uncommons, and 1 rare or mythic rare, 1 basic or common land). This means after picking one card the pack is passed on to the next player (during the closed beta other players are replaced with an AI). This continues until all cards have been picked. Players then build 40-card-minimum decks. The amount of basic lands is unlimited, they are provided to the player for free.", date: new Date(2021, 01, 29, 20, 00), location: "MTG Arena"},
+                rsvp: "Yes"
+            },{
+                connection: {_id: ObjectId("6089facf5e0cc1fa11f66568"), name: "FNM at Home | Treasure Singleton", host: "Wizards of the Coast", hostId: "6089c04f5e0cc1fa11f66560", topic: "Casual", details: "Friday Night Magic (or FNM) is a format of Magic: The Gathering tournaments, held on Friday nights in gaming stores and associations all across the world. They are designed to be a beginner-friendly introduction to organized play. FNM has currently been moved to online for the duration of the pandemic.", date: new Date(2021, 02, 05, 18, 00), location: "MTG Arena"},
+                rsvp: "Yes"
+            },{
+                connection: {_id: ObjectId("6089facf5e0cc1fa11f66569"), name: "Standard Metagame Challenge", host: "Wizards of the Coast", hostId: "6089c04f5e0cc1fa11f66560", topic: "Casual", details: "Standard Metagame Challenge is a special event that gives players the opportunity to win huge rewards in a relatively new metagame where the new cards from the latest set are being tested, and decklists are being refined.", date: new Date(2021, 02, 06, 18, 00), location: "MTG Arena"},
+                rsvp: "Yes"
+            },{
+                connection: {_id: ObjectId("6089facf5e0cc1fa11f6656a"), name: "FNM at Home | Standard", host: "Wizards of the Coast", hostId: "6089c04f5e0cc1fa11f66560", topic: "Casual", details: "Friday Night Magic (or FNM) is a format of Magic: The Gathering tournaments, held on Friday nights in gaming stores and associations all across the world. They are designed to be a beginner-friendly introduction to organized play. FNM has currently been moved to online for the duration of the pandemic.", date: new Date(2021, 02, 11, 18, 00), location: "MTG Arena"},
+                rsvp: "Yes"
+            },{
+                connection: {_id: ObjectId("6089facf5e0cc1fa11f6656b"), name: "Kaldheim | Constructed", host: "Wizards of the Coast", hostId: "6089c04f5e0cc1fa11f66560", topic: "Casual", details: "In Constructed format tournaments, players build their deck in advance of the tournament. Constructed decks must contain a minimum of 60 cards.", date: new Date(2021, 02, 13, 18, 00), location: "MTG Arena"},
+                rsvp: "Yes"
+            }
+        ]
+    }
+]);

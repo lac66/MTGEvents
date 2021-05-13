@@ -1,0 +1,38 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <title>MTG Events: Home</title>
+    <!-- Meta tag for keywords  -->
+    <meta name="keywords" content="events">
+    <!-- Meta tag for description  -->
+    <meta name="description" content="Welcome to the MTG events page">
+    <!-- Meta tag for character encoding  -->
+    <meta charset="UTF-8">
+    <!--External Stylesheet -->
+    <link rel="stylesheet" type="text/css" href="../resources/css/MTGEvents.css">
+    <!-- JavaScript function declarations -->
+    <script src="../js/index.js"></script>
+</head>
+
+<body id="indexBody">
+    <%- include("partials/header.ejs") %>
+
+    <%- include("partials/navigation.ejs") %>
+
+    <main>
+        <div id="indexTextHolder">
+            <h1 id="indexWelcome">Welcome to Magic: The Gathering Event Connections</h1>
+            <br>
+            <p><b>Attention all planeswalkers:</b></p>
+            <p>The battle for Kaldheim has begun! Conjure you best spells, reserve your mana pools, and join the fight!</p>
+            <br>
+            <p id="clickon">Click on <em>connections</em> to learn about the tournaments near you.</p>
+        </div>
+    </main>
+
+    <%- include("partials/footer.ejs") %>
+</body>
+
+</html>

@@ -1,0 +1,334 @@
+/* General Formatting */
+
+body {
+    background: black;
+    color: rgb(228, 228, 228);
+    background-repeat: no-repeat;
+    background-position: 60% 0%;
+    background-size: cover;
+    padding: 0px;
+    margin: 0px;
+}
+
+header:after {
+    content: "";
+    display: block;
+    margin: 0 auto;
+    width: 95%;
+    border-bottom: 1px solid #E2180A;
+}
+
+#imgLogo {
+    width: 15em;
+    height: 6em;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(228, 228, 228);
+}
+
+nav a {
+    font-size: 18pt;
+}
+
+nav a:hover {
+    background: rgba(128, 128, 128, 0.425);
+}
+
+#headerNav {
+    position: absolute;
+    right: 1.5em;
+    top: 3em;
+}
+
+#headerNav a {
+    padding: 0em 1em;
+    margin: 0px;
+}
+
+.leftBorder {
+    border-left: 1px solid #E2180A;
+}
+
+#lowerNav {
+    padding: 1em 0em;
+    
+}
+
+#lowerNav:after {
+    content: "";
+    display: block;
+    margin: 0 auto;
+    width: 95%;
+    padding-top: 20px;
+    border-bottom: 1px solid #E2180A;
+}
+
+#lowerNav a {
+    padding: 5px;
+    margin: 1.6em;
+    border-left: 5px solid #E2180A;
+    background: #e2180a49;
+    border-right: 5px solid #E2180A;
+}
+
+#lowerNav a:hover {
+    background: rgba(128, 128, 128, 0.425);
+}
+
+#lowerNav a:active {
+    border-style: inset;
+}
+
+#namePlaceholder {
+    position: absolute;
+    right: 0em;
+    top: 3em;
+}
+
+main {
+    padding-left: 2.5em;
+    min-height: 30em;
+}
+
+footer:before {
+    content: "";
+    display: block;
+    margin: 0 auto;
+    width: 95%;
+    border-bottom: 1px solid #E2180A;
+}
+
+footer p {
+    display: inline-block;
+    margin: 2em 2em 2em 2.5em;
+}
+
+
+/* Index Page */
+
+#indexBody {
+    background-image: linear-gradient(to left, transparent, rgba(0, 0, 0, 1)), url("../img/indexBackground.jpg");
+}
+
+#indexTextHolder {
+    width: 32%;
+    font-size: 20pt;
+}
+
+#indexWelcome {
+    font-size: 28pt;
+}
+
+#clickon {
+    font-size: 16pt;
+}
+
+
+/* Connections Page */
+
+#connectionsBody {
+    background-image: linear-gradient(to left, transparent, rgba(0, 0, 0, 1)), url("../img/connectionsBackground.jpg");
+}
+
+li a:hover {
+    text-decoration: underline;
+}
+
+/* Connection Detail Page */
+
+#connectionBody {
+    background-image: linear-gradient(to left, transparent, rgba(0, 0, 0, 1)), url("../img/connectionBackground.jpg");
+}
+
+#hostImg {
+    width: 10em;
+    height: 6em;
+}
+
+#detailsHolder {
+    width: 30%
+}
+
+#btnHolder {
+    border: 2px ridge #E2180A;
+    width: 14em;
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+#btnHolder p {
+
+    margin: 1em 1em 0em 1em;
+}
+
+.joinButton {
+    margin: 1em 0em 1em 1em;
+    border: 2px outset #F7C543;
+    background: #E2180A;
+    color: white;
+}
+
+.joinButton:hover {
+    background: #e2180a81;
+}
+
+#btnMaybe {
+    margin-right: 1em;
+}
+
+/* Saved Connections Page */
+
+#savedConnectionsBody {
+    background-image: url("../img/savedConnectionsBackground.jpg");
+    /* background-image: linear-gradient(to left, transparent, rgba(0, 0, 0, 1)), url("../img/savedConnectionsBackground.jpg"); */
+}
+
+#layer {
+    background: rgba(0, 0, 0, .75);
+    min-height: 48em;
+}
+
+table {
+    border-collapse: separate;
+    border-spacing: 10px 5px;
+    width: 90%;
+    border: 1px solid #E2180A;
+}
+
+th, td {
+    height: 2em;
+    border: 1px solid #F7C543;
+    text-align: left;
+    padding-left: 1em;
+}
+
+.ownedConnection {
+    background: #E2180A;
+    color: white;
+}
+
+.scbtn {
+    border: 2px outset #F7C543;
+    background: #E2180A;
+    color: white;
+}
+
+
+/* New Connection Page */
+
+#newConnectionBody {
+    background-image: url("../img/newConnectionBackground.jpg");
+}
+
+#newConnectionBody form {
+    margin: auto;
+    margin-bottom: 1em;
+    width: 60%;
+}
+
+#newConnectionBody label, #newConnectionBody input, #newConnectionBody textarea {
+    display: inline-block;
+    margin: 1em .5em;
+    font-size: 18pt;
+}
+
+#newConnectionBody label {
+    width: 30%;
+}
+
+#topic, #name, #where, #when, #newConnectionBody textarea {
+    width: 60%;
+}
+
+textarea {
+    vertical-align: top;
+}
+
+#newConnectionSubmit {
+    position: relative;
+    left: 22.25em;
+    width: 30%;
+    border: 2px outset #F7C543;
+    background: #E2180A;
+    color: white;
+}
+
+/* About Page */
+
+#aboutBody {
+    background-image: linear-gradient(to left, transparent, rgba(0, 0, 0, 1)), url("../img/aboutBackground.jpg");
+}
+
+#aboutBody h1 {
+    font-size: 28pt;
+}
+
+#aboutTextHolder {
+    width: 32%;
+    font-size: 20pt;
+}
+
+#jumpTo {
+    font-size: 16pt;
+}
+
+/* Contact Page */
+
+#contactBody {
+    background-image: linear-gradient(to left, transparent, rgba(0, 0, 0, 1)), url("../img/contactBackground.jpg");
+}
+
+#contactBody h1 {
+    font-size: 28pt;
+}
+
+#contactTextHolder {
+    margin-top: 2em;
+    font-size: 20pt;
+}
+
+/* Login Page */
+
+#loginBody {
+    background-image: url("../img/loginBackground.jpg");
+}
+
+#loginBody input {
+    display: inline-block;
+    height: 2em;
+    width: 20em;
+} 
+
+#loginBody label {
+    display: inline-block;
+    height: 2em;
+    width: 5em;
+}
+
+#contentHolder {
+    position: relative;
+    top: 3em;
+    left: 5em;
+}
+
+/* form {
+    position: relative;
+    top: 5em;
+    left: 5em;
+} */
+
+.formDiv {
+    width: fit-content;
+    padding: 1em;
+}
+
+#loginSubmit {
+    position: absolute;
+    left: 8em;
+    top: 19em;
+    border: 3px outset #F7C543;
+    background: #E2180A;
+    color: white;
+}

@@ -1,0 +1,16 @@
+<header>
+    <a href="/"><img src="../../resources/img/MTGLogo.png" alt="" id="imgLogo"></a>
+    <!-- For people who don't have JavaScript enabled-->
+    <noscript>This web page requires JavaScript to be enabled on your browser.</noscript>
+
+    <nav id="headerNav">
+        <a href="/user/newConnection">Start a New Connection</a>
+        <% if (data.currentSession.isLoggedIn) { %>
+            <a href="/user/savedConnections" class="leftBorder">My Connections</a>
+            <a href="/user/logout" class="leftBorder">Signout</a>
+        <% } else { %>
+            <a href="/user/login" class="leftBorder">Login</a>
+            <a href="/user/login" class="leftBorder">Signup</a>
+        <% } %>
+    </nav>
+</header>

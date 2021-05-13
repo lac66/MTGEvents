@@ -1,0 +1,57 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <title>MTG Events: Create</title>
+    <!-- Meta tag for keywords  -->
+    <meta name="keywords" content="events">
+    <!-- Meta tag for description  -->
+    <meta name="description" content="Create new connections for everyone to see">
+    <!-- Meta tag for character encoding  -->
+    <meta charset="UTF-8">
+    <!--External Stylesheet -->
+    <link rel="stylesheet" type="text/css" href="../resources/css/MTGEvents.css">
+    <!-- JavaScript function declarations -->
+    <script src="#"></script>
+</head>
+
+<body id="newConnectionBody">
+    <div id='layer'>
+        <%- include("partials/header.ejs") %>
+
+        <%- include("partials/navigation.ejs") %>
+
+        <main>
+            <form action="" method="POST">
+                <div>
+                    <label for="topic">Topic</label>
+                    <input type="text" name="topic" id="topic" placeholder="Topic">
+                </div>
+                <div>
+                    <label for="name">Name</label>
+                    <input type="text" name="name" id="name" placeholder="Name">
+                </div>
+                <div id='detailsDiv'>
+                    <label for="details">Details</label>
+                    <textarea name="details" id="details" cols="20" rows="5" placeholder="Description"></textarea>
+                </div>
+                <div>
+                    <label for="where">Where</label>
+                    <input type="text" name="where" id="where" placeholder="Location">
+                </div>
+                <div>
+                    <label for="when">When</label>
+                    <input type="date" name="when" id="when">
+                </div>
+                <div id='submitDiv'>
+                    <input type="submit" name="submit" id="newConnectionSubmit" value="Create Connection">
+                </div>
+            </form>
+        </main>
+
+        <%- include("partials/footer.ejs") %>
+    </div>
+</body>
+
+</html>

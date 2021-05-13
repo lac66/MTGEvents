@@ -1,0 +1,6 @@
+<nav id="lowerNav">
+    <a href="connections">Connections</a>
+    <% if (data.currentSession.isLoggedIn) { %>
+    <a href="savedConnections" id="namePlaceholder"><%= data.currentSession.username %></a>
+    <% } %>
+</nav>
