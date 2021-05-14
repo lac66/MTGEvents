@@ -223,7 +223,6 @@ th, td {
 }
 
 #newConnectionBody form {
-    margin: auto;
     margin-bottom: 1em;
     width: 60%;
 }
@@ -248,7 +247,7 @@ textarea {
 
 #newConnectionSubmit {
     position: relative;
-    left: 22.25em;
+    left: 20.5em;
     width: 30%;
     border: 2px outset #F7C543;
     background: #E2180A;
@@ -325,10 +324,68 @@ textarea {
 }
 
 #loginSubmit {
-    position: absolute;
+    position: relative;
     left: 8em;
-    top: 19em;
     border: 3px outset #F7C543;
     background: #E2180A;
     color: white;
+}
+
+/* Signup Page */
+#signupBody {
+    background-image: url("../img/loginBackground.jpg");
+}
+
+#signupBody input {
+    display: inline-block;
+    height: 2em;
+    width: 20em;
+} 
+
+#signupBody label {
+    display: inline-block;
+    height: 2em;
+    width: 5em;
+}
+
+.formDivSignup div {
+    position: relative;
+    left: 3em;
+}
+
+#passwordDiv {
+    margin-top: 2em;
+}
+
+#signupSubmit {
+    position: relative;
+    left: 4.5em;
+    margin: 2em;
+    border: 3px outset #F7C543;
+    background: #E2180A;
+    color: white;
+}
+
+/* Error Message */
+#error {
+    position: absolute;
+    left: 30em;
+    color: red;
+    border: 5px solid red;
+    padding: 1em;
+    font-size: large;
+}
+
+#errorHeader {
+    text-decoration: underline;
+}
+
+#errorNew {
+    position: absolute;
+    margin-top: 1.5em;
+    left: 45em;
+    color: red;
+    border: 5px solid red;
+    padding: 1em;
+    font-size: large;
 }

@@ -46,6 +46,10 @@ var addConnection = async function(newConnection) {
     return await newConnection.save();
 }
 
+var updateConnection = async function(updateConnection) {
+    return await connectionModel.Connection.findOneAndUpdate({_id:updateConnection.getId()}, updateConnection);
+}
+
 var deleteConnection = async function(connectionId) {
     return await connectionModel.Connection.deleteOne({_id: connectionId});
 }
@@ -56,4 +60,5 @@ module.exports.addRSVP = addRSVP;
 module.exports.updateRSVP = updateRSVP;
 module.exports.deleteRSVP = deleteRSVP;
 module.exports.addConnection = addConnection;
+module.exports.updateConnection = updateConnection;
 module.exports.deleteConnection = deleteConnection;

@@ -8,6 +8,7 @@ var app = express();
 
 // server setup
 app.set('view engine', 'ejs');
+app.use(express.json());
 app.use('/resources', express.static('resources'));
 app.use('/utilities', express.static('utilities'));
 

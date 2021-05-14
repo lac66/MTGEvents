@@ -39,16 +39,18 @@
                                 <td class="ownedConnection"><%=userConnections[i].connection.name%></td>
                                 <td class="ownedConnection"><%=userConnections[i].connection.topic%></td>
                                 <td class="ownedConnection"><%=userConnections[i].rsvp%></td>
+                                <td>
+                                    <button type="button" id="<%=userConnections[i].connection.getId()%>" class="scbtn update ownedConnection">Update</button>
                             <% } else { %>
                                 <td><%=userConnections[i].connection.name%></td>
                                 <td><%=userConnections[i].connection.topic%></td>
                                 <td><%=userConnections[i].rsvp%></td>
+                                <td>
+                                    <button type="button" id="<%=userConnections[i].connection.getId()%>" class="scbtn update">Update</button>
                             <% } %>
-                            <td>
-                                <% var delid = "del" + userConnections[i].connection.getId(); %>
-                                <button type="button" id="<%=userConnections[i].connection.getId()%>" class="scbtn update">Update</button>
-                                <button type="button" id="<%=delid%>" class="scbtn delete">Delete</button>
-                            </td>
+                                    <% var delid = "del" + userConnections[i].connection.getId(); %>
+                                    <button type="button" id="<%=delid%>" class="scbtn delete">Delete</button>
+                                </td>
                         </tr>
                     <% } %>
                 </table>

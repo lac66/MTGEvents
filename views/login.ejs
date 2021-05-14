@@ -26,6 +26,14 @@
             <div id="contentHolder">
                 <h1>Login</h1>
                 <h3>Signin to remember the battles you plan to fight in</h3>
+                <% if (data.hasLoginFailed) { %>
+                    <div id='error'>
+                        <h3 id='errorHeader'>Login Error</h3>
+                        <% data.errorMessage.forEach(function(item) { %>
+                            <p><%= item %></p>
+                        <%  }); %>
+                    </div>
+                <% } %>
                 <form action="" method="POST">
                     <div class="formDiv">
                         <label for="username">Username</label>

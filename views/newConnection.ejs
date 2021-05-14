@@ -12,6 +12,7 @@
     <meta charset="UTF-8">
     <!--External Stylesheet -->
     <link rel="stylesheet" type="text/css" href="../resources/css/MTGEvents.css">
+    <link rel="stylesheet" type="text/css" href="../../resources/css/MTGEvents.css">
     <!-- JavaScript function declarations -->
     <script src="#"></script>
 </head>
@@ -23,29 +24,79 @@
         <%- include("partials/navigation.ejs") %>
 
         <main>
+            <% if (data.hasLoginFailed) { %>
+                <div id='errorNew'>
+                    <h3 id='errorHeader'>New Connection Error</h3>
+                    <% data.errorMessage.forEach(function(item) { %>
+                        <p><%= item %></p>
+                    <%  }); %>
+                </div>
+            <% } %>
             <form action="" method="POST">
                 <div>
                     <label for="topic">Topic</label>
-                    <input type="text" name="topic" id="topic" placeholder="Topic">
+                    <% if (data.updateConnection != undefined) { %>
+                        <input type="text" name="topic" id="topic" value="<%= data.updateConnection.topic %>">
+                    <% } else { %>
+                        <input type="text" name="topic" id="topic" placeholder="Topic">
+                    <% } %>
                 </div>
                 <div>
                     <label for="name">Name</label>
-                    <input type="text" name="name" id="name" placeholder="Name">
+                    <% if (data.updateConnection != undefined) { %>
+                        <input type="text" name="name" id="name" value="<%= data.updateConnection.name %>">
+                    <% } else { %>
+                        <input type="text" name="name" id="name" placeholder="Name">
+                    <% } %>
                 </div>
                 <div id='detailsDiv'>
                     <label for="details">Details</label>
-                    <textarea name="details" id="details" cols="20" rows="5" placeholder="Description"></textarea>
+                    <% if (data.updateConnection != undefined) { %>
+                        <textarea name="details" id="details" cols="20" rows="5"><%= data.updateConnection.details %></textarea>
+                    <% } else { %>
+                        <textarea name="details" id="details" cols="20" rows="5" placeholder="Description"></textarea>
+                    <% } %>
                 </div>
                 <div>
                     <label for="where">Where</label>
-                    <input type="text" name="where" id="where" placeholder="Location">
+                    <% if (data.updateConnection != undefined) { %>
+                        <input type="text" name="where" id="where" value="<%= data.updateConnection.location %>">
+                    <% } else { %>
+                        <input type="text" name="where" id="where" placeholder="Location">
+                    <% } %>
                 </div>
                 <div>
                     <label for="when">When</label>
-                    <input type="date" name="when" id="when">
+                    <% if (data.updateConnection != undefined) { %>
+                        <% var year = data.updateConnection.date.getFullYear() %>
+                        <% var month = data.updateConnection.date.getMonth()+1 %>
+                        <% var date = data.updateConnection.date.getDate() %>
+                        <% var hours = data.updateConnection.date.getHours() %>
+                        <% var mins = data.updateConnection.date.getMinutes() %>
+                        <% if (month < 10) { %>
+                        <%      month = "0" + month; %>
+                        <% } %>
+                        <% if (date < 10) { %>
+                        <%      date = "0" + date; %>
+                        <% } %>
+                        <% if (hours < 10) { %>
+                        <%      hours = "0" + hours; %>
+                        <% } %>
+                        <% if (mins < 10) { %>
+                        <%      mins = "0" + mins; %>
+                        <% } %>
+                        <% var dateString = year + "-" + month + "-" + date + "T" + hours + ":" + mins;%>
+                        <input type="datetime-local" name="when" id="when" value=<%= dateString %>>
+                    <% } else { %>
+                        <input type="datetime-local" name="when" id="when">
+                    <% } %>
                 </div>
                 <div id='submitDiv'>
-                    <input type="submit" name="submit" id="newConnectionSubmit" value="Create Connection">
+                    <% if (data.updateConnection != undefined) { %>
+                        <input type="submit" name="submit" id="newConnectionSubmit" value="Update Connection">
+                    <% } else { %>
+                        <input type="submit" name="submit" id="newConnectionSubmit" value="Create Connection">
+                    <% } %>
                 </div>
             </form>
         </main>

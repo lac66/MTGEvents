@@ -1,0 +1,96 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <title>MTG Events: Signup</title>
+    <!-- Meta tag for keywords  -->
+    <meta name="keywords" content="signup">
+    <!-- Meta tag for description  -->
+    <meta name="description" content="Signup for a more personalized experience">
+    <!-- Meta tag for character encoding  -->
+    <meta charset="UTF-8">
+    <!--External Stylesheet -->
+    <link rel="stylesheet" type="text/css" href="../resources/css/MTGEvents.css">
+    <!-- JavaScript function declarations -->
+    <script src="#"></script>
+</head>
+
+<body id="signupBody">
+    <div id='layer'>
+        <%- include("partials/header.ejs") %>
+
+        <%- include("partials/navigation.ejs") %>
+
+        <main>
+            <div>
+                <h1>Sign Up</h1>
+                <h3>Create an account to create and save events</h3>
+                <% if (data.hasLoginFailed) { %>
+                    <div id='error'>
+                        <h3 id='errorHeader'>Signup Error</h3>
+                        <% data.errorMessage.forEach(function(item) { %>
+                            <p><%= item %></p>
+                        <%  }); %>
+                    </div>
+                <% } %>
+                <form action="" method="POST">
+                    <div class="formDivSignup">
+                        <label for="fName">First Name</label>
+                        <input type="text" name="fName" id="fName" placeholder="Norm">
+                    </div>
+                    <div class="formDivSignup">
+                        <label for="lName">Last Name</label>
+                        <input type="text" name="lName" id="lName" placeholder="Niner">
+                    </div>
+                    <div class="formDivSignup">
+                        <label for="email">Email</label>
+                        <input type="text" name="email" id="email" placeholder="normniner@uncc.edu">
+                    </div>
+                    <div class="formDivSignup">
+                        <p>Address</p>
+                        <div>
+                            <label for="line1">Line 1</label>
+                            <input type="text" name="line1" id="line1" placeholder="9201 University City Blvd">
+                        </div>
+                        <div>
+                            <label for="line2">Line 2</label>
+                            <input type="text" name="line2" id="line2" placeholder="331 Witherspoon Hall">
+                        </div>
+                        <div>
+                            <label for="city">City</label>
+                            <input type="text" name="city" id="city" placeholder="Charlotte">
+                        </div>
+                        <div>
+                            <label for="state">State</label>
+                            <input type="text" name="state" id="state" placeholder="NC">
+                        </div>
+                        <div>
+                            <label for="zip">Zip</label>
+                            <input type="text" name="zip" id="zip" placeholder="28223">
+                        </div>
+                        <div>
+                            <label for="country">Country</label>
+                            <input type="text" name="country" id="country" placeholder="US">
+                        </div>
+                    </div>
+                    <div class="formDivSignup" id="passwordDiv">
+                        <label for="password">Password</label>
+                        <input type="password" name="password" id="password" placeholder="Password">
+                    </div>
+                    <div class="formDivSignup">
+                        <label for="cPassword">Confirm Password</label>
+                        <input type="password" name="cPassword" id="cPassword" placeholder="Confirm Password">
+                    </div>
+                    <div id='formDivSignup'>
+                        <input type="submit" name="submit" id="signupSubmit" value="Sign Up">
+                    </div>
+                </form>
+            </div>
+        </main>
+
+        <%- include("partials/footer.ejs") %>
+    </div>
+</body>
+
+</html>

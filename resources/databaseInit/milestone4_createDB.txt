@@ -23,7 +23,8 @@ db.users.insertMany([
         _id: ObjectId("60887d915e0cc1fa11f6654d"),
         fName: "Norm", 
         lName: "Niner", 
-        email: "norm@niner.edu", 
+        email: "norm@niner.edu",
+        password: "UNCCrocks!!!", 
         address: {
             line1: "9201 University City Blvd", 
             line2: "", 
@@ -37,6 +38,7 @@ db.users.insertMany([
         fName: "Wizards",
         lName: "of the Coast",
         email: "wizardsotcoast@magic.com",
+        password: "MagicIsReal!",
         address: {
             line1: "1600 Lind Avenue",
             line2: "South West Suite 400",

@@ -25,7 +25,11 @@ window.onload = function () {
 
 // Link to connection details page
 function loadDetailsWindow() {
-    window.location.href = "/connections/" + this.id;
+    if (this.classList.contains("ownedConnection")) {
+        window.location.href = "/user/newConnection/" + this.id;
+    } else {
+        window.location.href = "/connections/" + this.id;
+    }
 } 
 
 // Link to delete userConnection handler

@@ -15,14 +15,27 @@ const addressSchema = new mongoose.Schema({
 const Address = mongoose.model('Address', addressSchema);
 
 const userSchema = new mongoose.Schema({
-    fName: String,
-    lName: String,
-    email: String,
-    address: addressSchema,
-    rsvpConnections: {
-        type: [userConnectionModel.userConnectionSchema],
-        default: []
-    }
+    fName: {
+        type: String,
+        required: true
+    },
+    lName: {
+        type: String,
+        required: true
+    },
+    email: {
+        type: String,
+        required: true
+    },
+    password: {
+        type: String,
+        required: true
+    },
+    address: addressSchema
+    // rsvpConnections: {
+    //     type: [userConnectionModel.userConnectionSchema],
+    //     default: []
+    // }
 }, {collection: 'users'});
 
 userSchema.methods.getId = function() {
@@ -45,9 +58,9 @@ userSchema.methods.getAddress = function() {
     return this.address;
 }
 
-userSchema.methods.getRsvpConnections = function() {
-    return this.rsvpConnections;
-}
+// userSchema.methods.getRsvpConnections = function() {
+//     return this.rsvpConnections;
+// }
 
 userSchema.methods.setAddress = function() {
 
